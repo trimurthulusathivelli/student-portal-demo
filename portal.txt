@@ -1,0 +1,4 @@
+Name:Trimurthulu
+Roll:97
+Group:BSC
+Cource:Computer Science
