@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Food Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            background-color:orangered;
+            color: white;
+            padding: 20px 0;
+            margin: 0 0 20px 0;
+        }
+
+        form {
+            max-width: 600px;
+            background:mediumvioletred;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        fieldset {
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 4px;
+            margin-bottom: 12px;
+            border: 1px solid lightcoral;
+            border-radius: 4px;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: orangered;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        input[type="submit"]:hover {
+            background-color: orangered;
+        }
+
+        @media (max-width: 640px) {
+            form {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Online Food Order Form</h1>
+    
+    <form action="/submit-order" method="post">
+        <fieldset>
+            <legend>Customer Details</legend>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="address">Delivery Address:</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Choose Your Food</legend>
+            <label><input type="checkbox" name="food[]" value="Pizza"> Pizza</label>
+            <label><input type="checkbox" name="food[]" value="Burger"> Burger</label>
+            <label><input type="checkbox" name="food[]" value="Pasta"> Pasta</label>
+            <label><input type="checkbox" name="food[]" value="Salad"> Salad</label>
+            <label><input type="checkbox" name="food[]" value="Sushi"> Sushi</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Quantity</legend>
+            <label for="quantity">Total Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Delivery Method</legend>
+            <label><input type="radio" name="delivery" value="Pickup" required> Pickup</label>
+            <label><input type="radio" name="delivery" value="Home Delivery" required> Home Delivery</label>
+        </fieldset>
+
+        <input type="submit" value="Place Order">
+    </form>
+
+</body>
+</html>
